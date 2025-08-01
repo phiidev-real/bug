@@ -22,18 +22,25 @@
 #define BUG_SUBMESSAGE(message)		std::cout << ::tab_spaces << "      -> " << message << std::endl;
 #define BUG_NEWLINE()			std::cout << ::tab_spaces << std::endl;
 
-const char *v_std = "#version 330 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "void main()\n"
-    "{\n"
-    "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-    "}\0";
-const char *f_std = "#version 330 core\n"
-    "out vec4 FragColor;\n"
-    "void main()\n"
-    "{\n"
-    "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-    "}\n\0";
+const char *v_std = R"(#version 330 core
+
+layout (location = 0) in vec3 a_position;
+
+void main()
+{
+
+	gl_Position = vec4(a_position, 1.0);
+
+})",	*f_std = R"(#version 330 core
+
+out vec4 FragColor;
+
+void main()
+{
+
+	gl_Position = vec4(1.0f, 0.0f, 0.0f, 1.0f);
+
+})";
 
 namespace {
 	

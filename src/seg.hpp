@@ -1,0 +1,11 @@
+
+namespace seg {
+	
+	class Segment {
+		
+		
+		
+	};
+	
+};
+

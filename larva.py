@@ -17,8 +17,8 @@ dir_tmp  = dir_root + "tmp/";
 dir_obj  = dir_root + "obj/";
 
 macros = [  ];
-compile_obj_template        = "g++ -c {finput} {fmacros} -ldl -lglfw -o {foutput}";
-compile_standalone_template = "g++ {finput} {fmacros} -ldl -lglfw -o {foutput}";
+compile_obj_template        = "g++ -O2 -c {finput} {fmacros} -ldl -lglfw -o {foutput}";
+compile_standalone_template = "g++ -O2 {finput} {fmacros} -ldl -lglfw -o {foutput}";
 
 def GetTimestamp(path):
     return None if not os.path.isfile(path) else os.path.getmtime(path);

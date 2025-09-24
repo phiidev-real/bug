@@ -22,7 +22,7 @@ PHOSIS_MSG = "\x1b[1;34mPHOSIS: \x1b[0m";
 debug_template = """
 #define {}_ERROR_MESSAGE(message)       std::cout << ::tab_spaces << \"\\x1b[1;31m{}: Error: \\x1b[0;31m\" << message << \"\\x1b[0m\" << std::endl;
 #define {}_ERROR_LOG(message, log)      std::cout << ::tab_spaces << \"\\x1b[1;31m{}: Error: \\x1b[0;31m\" << message << std::endl << std::endl\\
-						<< \"\\x1b[0;1;31m<log>\\x1b[0;31m\" << std::endl << log << \"\\x1b[1;31m<\\\\log>\\x1b\" << std::endl;
+    					<< \"\\x1b[0;1;31m<log>\\x1b[0;31m\" << std::endl << log << \"\\x1b[1;31m<\\\\log>\\x1b\" << std::endl;
 
 #define {}_MESSAGE(message)	            std::cout << ::tab_spaces << \"\\x1b[1;34m{}: \\x1b[0m\" << message << std::endl;
 #define {}_MESSAGE_MISC(message)	    std::cout << ::tab_spaces << \"\\x1b[1;35m{}: \\x1b[0m\" << message << std::endl;
@@ -209,7 +209,7 @@ def CompileCallback(path_in, path_out):
         
     
     #Call the compile function (TODO: make this compatible with different compilers
-    subprocess.call([ "g++", "-c", path_in, "-ldl", "-lglfw", "-o", path_out ]);
+    subprocess.call([ "g++", "-O3", "-c", path_in, "-ldl", "-lglfw", "-o", path_out ]);
     
 
 versions = [ "gl", "vk", ];
